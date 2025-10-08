@@ -1,10 +1,10 @@
 import React from "react";
-import "./Button.css";
+import bstyle from "./Button.module.css";
 
 const Button = (props) => {
   console.trace(props);
   return (
-    <button className="Button" data-testid="Button">
+    <button className={bstyle.Button} data-testid="Button">
       {props.value}
     </button>
   );
