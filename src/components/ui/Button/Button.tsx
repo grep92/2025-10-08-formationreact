@@ -3,21 +3,28 @@ import bstyle from "./Button.module.css";
 
 interface IButtonProps {
   mystyle?: object
-  bgcolor?: 'tomato'|'skyblue'|'aquamarine'
-  children: string | React.ReactElement | Array<string|React.ReactElement>
-  type?: 'button' |'reset' | 'submit'
+  bgcolor?: 'tomato' | 'skyblue' | 'aquamarine'
+  children: string | React.ReactElement | Array<string | React.ReactElement>
+  type?: 'button' | 'reset' | 'submit'
 }
 
 // FC = Functional Component.
 // Définition de l'interface du composant react.
-const Button: React.FC<IButtonProps> = ({children, mystyle, bgcolor, type = 'button'}) => {
-  console.log(children);
+// Autrement {children, mystyle, bgcolor, type = 'button'} : IButtonProps
+const Button: React.FC<IButtonProps> = ({ children, mystyle, bgcolor, type = 'button' }) => {
+
+  const buttonOnClick = (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    console.log(evt.altKey);
+  }
+
   return (
-    <button 
+    <button
       type={type}
-      className={bstyle.Button} 
-      style={{...mystyle , backgroundColor: bgcolor}} 
-      data-testid="Button">
+      className={bstyle.Button}
+      style={{ ...mystyle, backgroundColor: bgcolor }}
+      data-testid="Button"
+      onClick={buttonOnClick}
+    >
       {children}
     </button>
   );
