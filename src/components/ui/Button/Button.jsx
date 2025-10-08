@@ -1,10 +1,14 @@
 import React from "react";
 import bstyle from "./Button.module.css";
 
-const Button = (props) => {
+const Button = ({children, mystyle, type = 'button'}) => {
+  console.log(children);
   return (
-    <button className={bstyle.Button} style={{...props.mystyle}} data-testid="Button">
-      {props.value}
+    <button 
+      type={type}
+      className={bstyle.Button} 
+      style={{...mystyle}} data-testid="Button">
+      {children}
     </button>
   );
 };
