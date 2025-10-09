@@ -9,9 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "genui": "npx generate-react-cli c --type=uicmp",
-    "genlayout": "npx generate-react-cli c --type=layoutcmp"
+    "genlayout": "npx generate-react-cli c --type=layoutcmp",
+    "jsonserver": "json-server -p 5629 db/db.json"
   },
   "dependencies": {
+    "json-server": "0.17.4",
     "orsys-tjs-meme": "^1.0.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"

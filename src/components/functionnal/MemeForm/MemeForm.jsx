@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./MemeForm.module.css";
 import Button from '../../ui/Button/Button'
 
-const MemeForm = ({meme, onMemeChange}) => {
+const MemeForm = ({meme, images, onMemeChange}) => {
+  
   const [currentMeme, setCurrentMeme] = useState(meme);
 
   // Changement d'un champ entier - 
@@ -25,6 +26,11 @@ const MemeForm = ({meme, onMemeChange}) => {
     setCurrentMeme(newState);
   };
 
+  useEffect( () => {
+    onMemeChange(currentMeme);
+    }
+    , [currentMeme]);
+
   return (
     <div className={style.MemeForm}>
       {JSON.stringify(currentMeme)}
@@ -40,12 +46,15 @@ const MemeForm = ({meme, onMemeChange}) => {
         <br />
         <input name="titre" id="titre" defaultValue={currentMeme.titre} onChange={onStringInputChange}/>
         <hr />
-        <label htmlFor="image">
+        <label htmlFor="imageId">
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
+        <select name="imageId" id="imageId" defaultValue={currentMeme.imageId} onChange={onNumberInputChange}>
           <option value="-1">No image</option>
+          {
+            images.map( (img, i) => <option key={'option' + i} value={img.id}>{img.name}</option>)
+          }
         </select>
         <hr />
         <label htmlFor="text">
