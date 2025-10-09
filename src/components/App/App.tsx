@@ -5,7 +5,13 @@ const App = () => {
   return (
     <>
       <div>DEMAT Breizh</div>
-      <Button mystyle={{backgroundColor:"pink"}} type="button">Benjamin</Button>
+      <Button mystyle={{backgroundColor:"pink"}} 
+              type="button"
+              clickAction={(clickArg)=>{
+                console.log(clickArg)
+              }}>
+      Benjamin
+      </Button>
       <Button bgcolor='tomato'>
         <div>Div1</div>
         <div>Div2</div>

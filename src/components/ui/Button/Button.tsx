@@ -6,15 +6,22 @@ interface IButtonProps {
   bgcolor?: 'tomato' | 'skyblue' | 'aquamarine'
   children: string | React.ReactElement | Array<string | React.ReactElement>
   type?: 'button' | 'reset' | 'submit'
+  clickAction?: (evtArg:string) => void;
 }
 
 // FC = Functional Component.
 // Définition de l'interface du composant react.
 // Autrement {children, mystyle, bgcolor, type = 'button'} : IButtonProps
-const Button: React.FC<IButtonProps> = ({ children, mystyle, bgcolor, type = 'button' }) => {
+const Button: React.FC<IButtonProps> = ({ children, mystyle, bgcolor, type = 'button', clickAction }) => {
 
   const buttonOnClick = (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.log(evt.altKey);
+    if ( clickAction ) {
+      clickAction("⚡Aie!");
+    }
+    else {
+      console.log("Pas d'action définie")
+    }
   }
 
   return (
