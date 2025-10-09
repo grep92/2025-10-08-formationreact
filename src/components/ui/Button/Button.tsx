@@ -1,47 +1,39 @@
 import React, { useEffect, useState } from "react";
-import bstyle from "./Button.module.css";
-
+import cmpstyle from "./Button.module.css";
 interface IButtonProps {
-  mystyle?: object
-  bgcolor?: 'tomato' | 'skyblue' | 'aquamarine'
-  children: string | React.ReactElement | Array<string | React.ReactElement>
-  type?: 'button' | 'reset' | 'submit'
-  clickAction?: (evtArg:string) => void;
+  style?: object;
+  bgcolor: "tomato" | "skyblue" | "aquamarine";
+  type?: "button" | "reset" | "submit";
+  clickAction?: (unArg: string) => void;
+  children: string | React.ReactElement | Array<string | React.ReactElement>;
 }
-
-// FC = Functional Component.
-// Définition de l'interface du composant react.
-// Autrement {children, mystyle, bgcolor, type = 'button'} : IButtonProps
-const Button: React.FC<IButtonProps> = ({ children, mystyle, bgcolor, type = 'button', clickAction }) => {
-
-  const [buttonClicked, setButtonClicked] = useState(false);
-  
-  const buttonOnClick = () => {
-    setButtonClicked(true);
-
-    if ( clickAction ) {
-      clickAction("⚡Aie!");
-    }
-    else {
-      console.log("Pas d'action de clic définie");
-    }
-  }
-
+const Button: React.FC<IButtonProps> = ({
+  style,
+  clickAction,
+  bgcolor,
+  children,
+  type = "button",
+}) => {
+  const [clicked, setclicked] = useState(false);
   useEffect(() => {
-    if (buttonClicked) {
-      console.log(`Bouton appuyé`);
-      setTimeout(() => {
-        console.log(`On enlève`);
-        setButtonClicked(false);
-      }, 300);
+    setTimeout(() => {
+      setclicked(false);
+    }, 230);
+  }, [clicked]);
+  const buttonOnClick = (
+    evt: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    setclicked(true);
+    //console.log("button clicked", evt);
+    if (clickAction) {
+      clickAction("on m'a violement cliquer dessus");
     }
-  }, [buttonClicked]);
-
+  };
   return (
     <button
       type={type}
-      className={`${bstyle.Button} ${buttonClicked? bstyle.clicked : ''}`}
-      style={{ ...mystyle, backgroundColor: bgcolor }}
+      className={`${cmpstyle.Button}${clicked ? " " + cmpstyle.clicked : ""}`}
+      style={{ ...style, backgroundColor: bgcolor }}
       data-testid="Button"
       onClick={buttonOnClick}
     >

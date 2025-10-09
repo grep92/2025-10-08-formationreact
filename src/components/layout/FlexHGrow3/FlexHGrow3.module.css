@@ -1,0 +1,8 @@
+.FlexHGrow3 {
+    display: flex;
+    flex-direction: column;
+    height:97vh;
+}
+.FlexHGrow3>div:nth-child(3){
+    flex-grow: 1;
+}

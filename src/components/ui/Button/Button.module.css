@@ -1,20 +1,23 @@
 .Button {
-    border: none;
-    border-radius: 7px;
-    padding: 10px, 5px;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
 
-    font-weight: 900;
-    font-size: xx-large;
-    box-shadow: 15px 15px 25px grey;
-    margin-bottom: 27px;
-    margin-right: 10px;
-    
-    background-color: skyblue;
-    color: white;
+  font-weight: 900;
+  font-size: xx-large;
+  box-shadow: 15px 15px 25px grey;
+
+  margin-bottom: 27px;
+  margin-right: 10px;
+
+  background-color: skyblue;
+  color: white;
 }
-
-.clicked{
-    box-shadow: 15px 15px 25px grey;
-    border: 1px solid grey;
-    padding: 9px, 4px;
+.clicked {
+  box-shadow: 5px 5px 25px grey;
+  border: 1px solid grey;
+  padding: 4px 9px;
+}
+.danger {
+  background-color: tomato;
 }
