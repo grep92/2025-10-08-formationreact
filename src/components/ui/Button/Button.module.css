@@ -12,3 +12,9 @@
     background-color: skyblue;
     color: white;
 }
+
+.clicked{
+    box-shadow: 15px 15px 25px grey;
+    border: 1px solid grey;
+    padding: 9px, 4px;
+}

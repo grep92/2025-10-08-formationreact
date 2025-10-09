@@ -8,13 +8,12 @@ const App = () => {
 
   // Sur montage et démontage du composant.
   useEffect(() => {
-    console.log(`useEffect mount/unmount`); 
     setCounter(0);
   }, []);
 
   // Sur rafraîchissement de counter
   useEffect(() => {
-    console.log(`useEffect is called with ${counter}`); 
+    //console.log(`useEffect is called with ${counter}`); 
   }, [counter]);
 
   return (
