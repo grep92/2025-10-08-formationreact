@@ -15,7 +15,6 @@ interface IButtonProps {
 const Button: React.FC<IButtonProps> = ({ children, mystyle, bgcolor, type = 'button', clickAction }) => {
 
   const buttonOnClick = (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log(evt.altKey);
     if ( clickAction ) {
       clickAction("⚡Aie!");
     }
