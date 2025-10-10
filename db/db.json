@@ -201,6 +201,51 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 14
+    },
+    {
+      "titre": "",
+      "text": "⚡Baahhh",
+      "x": 0,
+      "y": 17,
+      "fontWeight": "500",
+      "fontSize": 30,
+      "underline": false,
+      "italic": false,
+      "imageId": 2,
+      "color": "#000000",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 15
+    },
+    {
+      "titre": "",
+      "text": "😂Tu t'es vu🤣",
+      "x": 0,
+      "y": 63,
+      "fontWeight": "500",
+      "fontSize": 30,
+      "underline": false,
+      "italic": false,
+      "imageId": 4,
+      "color": "#e4f03d",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 16
+    },
+    {
+      "titre": "",
+      "text": "😏Easy peasy💀",
+      "x": 0,
+      "y": 17,
+      "fontWeight": "500",
+      "fontSize": 30,
+      "underline": false,
+      "italic": false,
+      "imageId": 0,
+      "color": "#000000",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 17
     }
   ]
 }

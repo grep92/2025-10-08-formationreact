@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button";
 
-const MemeForm = ({ meme, images, onMemeChange }) => {
+const MemeForm = ({ meme, images, onMemeChange, onMemeSave }) => {
   const [currentMeme, setCurrentMeme] = useState(meme);
 
   // Changement d'un champ entier -
@@ -34,7 +34,8 @@ const MemeForm = ({ meme, images, onMemeChange }) => {
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
-          onMemeChange(currentMeme);
+          // onMemeChange(currentMeme);
+          onMemeSave(currentMeme);
         }}
       >
         <label htmlFor="titre">
