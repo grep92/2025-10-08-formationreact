@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type {ImageInterface, MemeInterface} from "orsys-tjs-meme";
-import {memes, images} from '../../db/db.json';
 import { loadResources } from './asyncCaller';
 
 interface IResourceState{
@@ -9,8 +8,8 @@ interface IResourceState{
 }
 
 const initialState:IResourceState = {
-    memes:memes,
-    images:images
+    memes: [],
+    images: []
 };
 
 const resources = createSlice({
