@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MemeSVGViewer from './MemeSVGViewer';
+import MemeSVGViewer from './MemeSVGViewerStoreConnector';
 
 describe('<MemeSVGViewer />', () => {
   test('it should mount', () => {
